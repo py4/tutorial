@@ -12,6 +12,7 @@ gem 'thin'
 gem 'devise'
 gem 'simple_form'
 gem 'pg'
+gem 'gravatarify', '~> 3.0.0'
 
 group :development do
 	gem 'quiet_assets', :group => :development

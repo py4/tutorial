@@ -5,11 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :username, presence: true, uniqueness: true
-  validate :uniq_enrollment, before: 
-
+  validates :firstname, presence: true
+  validates :surname, presence: true
+  
   has_many :enrollments
   has_many :subjects, through: :enrollments 
-
-  def uniq_enrollment
-  end
 end
