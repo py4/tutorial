@@ -7,7 +7,12 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
   validates :firstname, presence: true
   validates :surname, presence: true
-  
+
   has_many :enrollments
   has_many :subjects, through: :enrollments 
+
+  def admin?
+  	admins = ["ibtkm2009@gmail.com"]
+  	admins.include? email
+  end
 end
