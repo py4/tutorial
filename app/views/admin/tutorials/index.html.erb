@@ -1,1 +1,40 @@
-<%= render partial: 'tutorials/list' %>
+<div class="management with-font text-center" id="new">
+	مدیریت محتواها.
+</div>
+
+<div class="container with-margin">
+	<div class="row">
+		<% if @tutorials.any? %>
+		<div class="col-md-10 col-md-offset-1">
+			<table class="table table-stripped">
+				<thead>
+					<tr>
+						<th> عنوان </th>
+						<th> ساخته شده در </th>
+						<th> توسط </th>
+						<th> تعداد صفحات</th>
+						<th> </th>
+						<th> </th>
+						<th> </th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @tutorials.each do |tutorial| %>
+					<tr>
+						<td> <%= tutorial.title %> </td>
+						<td> <%= persian_date(tutorial.created_at) %> </td>
+						<td> <%= tutorial.writer %> </td>
+						<td> <%= persian_number(tutorial.pages.count) %> </td>
+						<td> <%= link_to 'نمایش', admin_subject_path(tutorial), class: "btn btn-default" %> </td>
+						<td> <%= link_to 'ویرایش',edit_admin_subject_path(tutorial), class: "btn btn-info" %> </td>
+						<td> <%= link_to 'حذف', admin_subject_path(tutorial), class: "btn btn-danger", method: :delete %> </td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+		<% else %>
+		<%= render partial: 'tutorials/empty_list' %>
+		<% end %>
+	</div>
+</div>

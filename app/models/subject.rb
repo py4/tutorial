@@ -1,6 +1,6 @@
 class Subject < ActiveRecord::Base
-	has_many :pages
-	has_many :enrollments
+	has_many :pages, dependent: :destroy
+	has_many :enrollments, dependent: :destroy
 	has_many :users, through: :enrollments
 
 	validates :title, presence: true
