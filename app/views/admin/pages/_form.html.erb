@@ -4,7 +4,7 @@
 
 <div class="management text-center" id="new-form">
   <div class="form-group with-font" id="label">
-    <%= simple_form_for @page, url: admin_subject_pages_path do |f| %>
+    <%= simple_form_for [:admin, @tutorial, @page] do |f| %>
     <div class="row field">
       <p>
         محتوای این صفحه را بنویسید.

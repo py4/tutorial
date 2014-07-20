@@ -1,8 +1,25 @@
 class Admin::PagesController < ApplicationController
 	before_action :set_tutorial
 
+	def show
+		@page = @tutorial.pages.find(params[:id])
+	end
+
+	def edit
+		@page = @tutorial.pages.find(params[:id])
+	end
+
 	def new
 		@page = @tutorial.pages.new
+	end
+
+	def update
+		@page = @tutorial.pages.find(params[:id])
+		if @page.update(page_params)
+			redirect_to ['admin',@tutorial], flash: { success: 'صفحه با موفقیت به روز شد.' }
+		else
+			render 'edit'
+		end
 	end
 
 	def create
@@ -11,6 +28,13 @@ class Admin::PagesController < ApplicationController
 			redirect_to ['admin',@tutorial], flash: { success: 'صفحه با موفقیت ایجاد شد.' }
 		else
 			render 'new'
+		end
+	end
+
+	def destroy
+		@page = @tutorial.pages.find(params[:id])
+		if @page.destroy
+			redirect_to ['admin',@tutorial], flash: { success: 'صفحه با موفقیت حذف شد شد.' }
 		end
 	end
 
