@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <% if @tutorials.any? %>
+        <div class="col-md-9">
+            <% @tutorials.each do |tutorial| %>
+                <%= render partial: 'tutorials/full_list', locals: {tutorial: tutorial} %>
+            <% end %>
+        </div>
+        <% else %>
+            <%= render partial: 'tutorials/empty_list' %>
+        <% end %>
+    </div>
+</div>

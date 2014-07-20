@@ -173,8 +173,27 @@ body#registration{
 }
 
 .landing .title {
-    font-size: 100px;
-    
+   font-size: 100px;    
+}
+
+.with-font {
+    font-family: "Niloofar", sans-serif
+}
+
+.management {
+    margin-top: 45px;
+}
+
+.management#new {
+    font-size: 50px;
+}
+
+.management #label {
+    font-size: 20px;
+}
+
+.field {
+    margin-top: 20px;
 }
 
 .landing .desc {
@@ -187,7 +206,10 @@ body#registration{
     margin-top: 60px;
 }
 
-
+.empty {
+    font-family: "Niloofar", sans-serif;
+    font-size: 50px;
+}
 
 a:hover { text-decoration:none; }
 .btn
@@ -221,3 +243,7 @@ a:hover { text-decoration:none; }
 .post .glyphicon { margin-right:5px; }
 .post-header-line { border-top:1px solid #DDD;border-bottom:1px solid #DDD;padding:5px 0px 5px 15px;font-size: 12px; }
 .post-content { padding-bottom: 15px;padding-top: 15px;}
+
+.with-margin {
+    margin-top: 50px;
+}

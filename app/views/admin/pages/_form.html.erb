@@ -1,0 +1,22 @@
+<div class="management with-font text-center" id="new">
+  این صفحه‌ی شماره‌ی <%= persian_number(@tutorial.pages.size) %> است.
+</div>
+
+<div class="management text-center" id="new-form">
+  <div class="form-group with-font" id="label">
+    <%= simple_form_for @page, url: admin_subject_pages_path do |f| %>
+    <div class="row field">
+      <p>
+        محتوای این صفحه را بنویسید.
+      </p>
+      <div class="col-md-10 col-md-offset-1">
+        <%= f.input :content, input_html: { class: "form-control", size: "50x10" }, label: false %>
+      </div>
+    </div>
+
+    <div class="row field">
+      <%= f.submit 'ایجاد کن' , class: 'btn btn-info'%>
+    </div>
+    <% end %>
+  </div>
+</div>

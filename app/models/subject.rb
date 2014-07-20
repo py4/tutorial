@@ -2,4 +2,8 @@ class Subject < ActiveRecord::Base
 	has_many :pages
 	has_many :enrollments
 	has_many :users, through: :enrollments
+
+	validates :title, presence: true
+	validates :description, presence: true
+	validates :writer, presence: true
 end

@@ -49,6 +49,7 @@ GEM
     gravatarify (3.0.0)
     hike (1.2.3)
     i18n (0.6.11)
+    jalalidate (0.3.3)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -142,6 +143,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   gravatarify (~> 3.0.0)
+  jalalidate
   jbuilder (~> 1.2)
   jquery-rails
   pg
