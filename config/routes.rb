@@ -3,15 +3,16 @@ Tutorial::Application.routes.draw do
   root to: 'pages#landing'
 
   get '/tutorials' => 'tutorials#index'
+  #get '/admin' => 'admin/tutorials#index'
 
-  get '/admin' => 'admin/tutorials#index'
+  resources :subjects, path: 'tutorials', controller: 'tutorials', only: [:index, :show] do
+    resources :pages, only: [:index, :show]
+  end
+
   namespace 'admin' do
-  	#get '/' => 'tutorials#index'
-  	#root to: 'tutorials#index'
+    root to: 'tutorials#index'
   	resources :subjects, path: 'tutorials', controller: 'tutorials' do
   		resources :pages
   	end
   end
-  #get '/admin' => 'managements#index'
-  #get '/admin/tutorials/new' => 'managements#new'
 end

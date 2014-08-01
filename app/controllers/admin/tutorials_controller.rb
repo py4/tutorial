@@ -1,4 +1,4 @@
-class Admin::TutorialsController < ApplicationController
+class Admin::TutorialsController < Admin::AdminController
 
 	def show
 		@tutorial = Subject.find(params[:id])
@@ -6,6 +6,7 @@ class Admin::TutorialsController < ApplicationController
 	end
 
 	def index
+		puts "holly fuck!"
 		@tutorials = Subject.all
 	end
 

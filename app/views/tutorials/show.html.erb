@@ -1,0 +1,33 @@
+<div class="row with-font title-font text-center with-margin">
+	<%= @tutorial.title %>
+</div>
+
+<% if @tutorial.pages.any? %>
+<div class="with-margin row">
+	<div class="col-md-6 col-md-offset-3">
+		<table class="table table-stripped">
+			<thead>
+				<tr>
+					<th> نام صفحه </th>
+					<th> ساخته شده در </th>
+					<th> </th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @tutorial.pages.each_with_index do |page,index| %>
+				<tr>
+					<td> صفحه‌ی شماره‌ی <%= persian_number(index + 1) %> </td>
+					<td> <%= persian_date(page.created_at) %> </td>
+					<td> <%= link_to 'نمایش', subject_page_path(@tutorial,page), class: "btn btn-default" %> </td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
+<% end %>
+
+<div class="row with-font text-center with-margin">
+<%= link_to 'مرکز آموزش‌ها', subjects_path, class: "btn btn-info" %>
+</div>
+

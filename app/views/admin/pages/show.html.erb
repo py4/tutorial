@@ -1,13 +1,4 @@
-<div class="row management with-font text-center" id="new">
-	<%= @tutorial.title %> - صفحه‌ی شماره‌ی <%= persian_number(@tutorial.pages.index(@page)+1) %>
-</div>
-
-<div class="row">
-	<div class="col-md-6 col-md-offset-3 with-margin">
-		
-		<%= raw @page.content %>
-	</div>
-</div>
+<%= render partial: 'pages/show', locals: { page: @page, tutorial: @tutorial} %>
 
 <div class="row with-margin">
 	<div class="col-md-6 col-md-offset-3 links">

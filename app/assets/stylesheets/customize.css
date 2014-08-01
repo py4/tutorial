@@ -180,6 +180,10 @@ body#registration{
     font-family: "Niloofar", sans-serif
 }
 
+.title-font {
+    font-size: 50px;
+}
+
 .management {
     margin-top: 45px;
 }
@@ -246,4 +250,8 @@ a:hover { text-decoration:none; }
 
 .with-margin {
     margin-top: 50px;
+}
+
+span.with-font {
+    padding-left: 5px;
 }
