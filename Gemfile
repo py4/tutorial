@@ -14,6 +14,7 @@ gem 'simple_form'
 gem 'pg'
 gem 'gravatarify', '~> 3.0.0'
 gem 'jalalidate'
+
 group :development do
 	gem 'quiet_assets', :group => :development
 	gem 'pry-rails'
