@@ -30,7 +30,7 @@ class Admin::TutorialsController < Admin::AdminController
 	def destroy
 		@tutorial = Subject.find(params[:id])
 		if @tutorial.destroy
-			redirect_to [:admin], flash: { success: 'با موفقیت حذف شد' }
+			redirect_to admin_root_path, flash: { success: 'با موفقیت حذف شد' }
 		end
 	end
 
