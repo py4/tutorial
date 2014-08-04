@@ -3,9 +3,9 @@
 
 <head>
 	<title>Tutorial</title>
+	
 	<link rel="stylesheet" type="text/css" href="/prism.css">
 	<script language="javascript" type="text/javascript" src="/prism.js"></script>
-	
 	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
@@ -16,5 +16,9 @@
 	<%= render partial: 'layouts/navbar' %>
 	<%= render 'layouts/message' %>
 	<%= yield %>
+	
+	<script type="text/javascript">
+	Prism.highlightAll();
+	</script>
 </body>
 </html>
