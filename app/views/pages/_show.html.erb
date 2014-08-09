@@ -11,9 +11,13 @@
 </div>
 
 <div class="row with-font text-center with-margin">
+	<% if index == session[:tutorials][tutorial.id.to_s]+1 %>
+		<%= link_to 'یاد گرفتم', subject_page_learn_path(tutorial, page), class: 'btn btn-success', method: :post %> 
+	<% else %>
 		<% if index < tutorial.pages.size-1 %>
-			<%= link_to 'بعد', subject_page_path(tutorial, tutorial.pages.order(:created_at)[index+1]) , class: 'btn btn-default'%>
+			<%= link_to 'بعد', subject_page_path(tutorial, tutorial.pages.order(:created_at)[index+1]) , class: 'btn btn-default' %>
 		<% end %>
+	<% end %>
 
 		<% if index > 0 %>
 			<%= link_to 'قبل', subject_page_path(tutorial, tutorial.pages.order(:created_at)[index-1]) , class: 'btn btn-default'%>

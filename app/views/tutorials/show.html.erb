@@ -4,30 +4,24 @@
 
 <% if @tutorial.pages.any? %>
 <div class="with-margin row">
-	<div class="col-md-6 col-md-offset-3">
-		<table class="table table-stripped">
-			<thead>
-				<tr>
-					<th> نام صفحه </th>
-					<th> ساخته شده در </th>
-					<th> </th>
-				</tr>
-			</thead>
-			<tbody>
-				<% @tutorial.pages.each_with_index do |page,index| %>
-				<tr>
-					<td> <%= page.title %> </td>
-					<td> <%= persian_date(page.created_at) %> </td>
-					<td> <%= link_to 'نمایش', subject_page_path(@tutorial,page), class: "btn btn-default" %> </td>
-				</tr>
-				<% end %>
-			</tbody>
-		</table>
+	<div class="col-md-6 col-md-offset-4">
+		<% if @last_i == -1 %>
+			<p>
+				شما هنوز این آموزش را شروع نکرده‌اید.
+			</p>
+		<% else %>
+			<% page = @tutorial.pages.order(:created_at)[@last_i] %>
+			آخرین صفحه‌ای که ‌آن‌را فرا گرفتید:‌ <td> <%= link_to page.title, subject_page_path(@tutorial,page) %></td>
+		<% end %>
 	</div>
 </div>
 <% end %>
 
 <div class="row with-font text-center with-margin">
-<%= link_to 'مرکز آموزش‌ها', subjects_path, class: "btn btn-info" %>
+	<% if @last_i < @tutorial.pages.size-1 %>
+	<%= link_to "#{@last_i == -1 ? 'شروع' : 'ادامه'}", subject_page_path(@tutorial, @tutorial.pages.order(:created_at)[@last_i+1]), class: 'btn btn-success' %>
+	<% end %>
+	<br><br>
+	<%= link_to 'مرکز آموزش‌ها', subjects_path, class: "btn btn-info" %>
 </div>
 

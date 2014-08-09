@@ -6,13 +6,15 @@ Tutorial::Application.routes.draw do
   #get '/admin' => 'admin/tutorials#index'
 
   resources :subjects, path: 'tutorials', controller: 'tutorials', only: [:index, :show] do
-    resources :pages, only: [:index, :show]
+    resources :pages, only: [:index, :show] do
+      post '/learn' => 'pages#learn'
+    end
   end
 
   namespace 'admin' do
     root to: 'tutorials#index'
-  	resources :subjects, path: 'tutorials', controller: 'tutorials' do
-  		resources :pages
-  	end
+    resources :subjects, path: 'tutorials', controller: 'tutorials' do
+      resources :pages
+    end
   end
 end

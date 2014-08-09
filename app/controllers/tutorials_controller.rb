@@ -5,5 +5,6 @@ class TutorialsController < ApplicationController
 
 	def show
 		@tutorial = Subject.find(params[:id])
+		@last_i = session[:tutorials][@tutorial.id.to_s]
 	end
 end
