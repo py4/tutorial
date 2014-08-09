@@ -16,7 +16,7 @@
 			<tbody>
 				<% @tutorial.pages.each_with_index do |page,index| %>
 				<tr>
-					<td> صفحه‌ی شماره‌ی <%= persian_number(index + 1) %> </td>
+					<td> <%= page.title %> </td>
 					<td> <%= persian_date(page.created_at) %> </td>
 					<td> <%= link_to 'نمایش', subject_page_path(@tutorial,page), class: "btn btn-default" %> </td>
 				</tr>

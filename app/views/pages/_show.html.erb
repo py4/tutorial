@@ -1,7 +1,8 @@
-<% index = tutorial.pages.index(page) %>
+<% index = tutorial.pages.order(:created_at).index(page) %>
 <div class="row management with-font text-center" id="new">
-	<%= tutorial.title %> - صفحه‌ی شماره‌ی <%= persian_number(index+1) %>
+	<%= page.title %>
 </div>
+
 
 <div class="row">
 	<div class="col-md-6 col-md-offset-3 with-margin content">

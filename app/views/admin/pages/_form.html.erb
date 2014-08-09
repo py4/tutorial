@@ -1,10 +1,15 @@
-<div class="management with-font text-center" id="new">
-  این صفحه‌ی شماره‌ی <%= persian_number(@tutorial.pages.size) %> است.
-</div>
-
 <div class="management text-center" id="new-form">
   <div class="form-group with-font" id="label">
     <%= simple_form_for [:admin, @tutorial, @page] do |f| %>
+    <div class="row field">
+      <p>
+        عنوان این صفحه:
+      </p>
+      <div class="col-md-4 col-md-offset-4">
+        <%= f.input :title, input_html: {class: 'form-control'}, label: false %>
+      </div>
+    </div>
+
     <div class="row field">
       <p>
         محتوای این صفحه را بنویسید.

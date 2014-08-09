@@ -18,7 +18,7 @@
 			<tbody>
 				<% @pages.each_with_index do |page,index| %>
 				<tr>
-					<td> صفحه‌ی شماره‌ی <%= persian_number(index + 1) %> </td>
+					<td> <%= page.title %> </td>
 					<td> <%= persian_date(page.created_at) %> </td>
 					<td> <%= link_to 'نمایش', admin_subject_page_path(@tutorial,page), class: "btn btn-default" %> </td>
 					<td> <%= link_to 'ویرایش',edit_admin_subject_page_path(@tutorial,page), class: "btn btn-info" %> </td>
